@@ -1,26 +1,47 @@
+import { useState } from "react";
 import Links from "../links/Links";
 import style from "./Navbar.module.css";
-import {FcMenu} from 'react-icons/fc'
+import { FcMenu } from "react-icons/fc";
 
-
-function Navbar(  ) {
+function Navbar() {
   // console.log("this is the console of navbar ", links.github)
   const navLinks = ["Home", "About", "Projects"];
+  const [isVisible, setIsVisible] = useState(false);
+
+  const toggleVisiblity = () => {
+    setIsVisible(!isVisible);
+  };
+
   return (
     <>
       <nav className={style.nav}>
+        {/* for small divces */}
+        <div className={style.menue}>
+          <FcMenu onClick={toggleVisiblity} />
+         <div className={`${style.sideMenue} ${isVisible ? style.visible : ''}`}>
+         {isVisible && (
+            <div>
+              {navLinks.map((link, i) => {
+                return (
+                  <a key={i} href={"#" + link}>
+                    {link}
+                  </a>
+                );
+              })}
+            </div>
+          )}
+         </div>
+        </div>
         <div className={style.logo}>
           <a href="/">
             <code className={style.Logo}>Nasser Hussein</code>
           </a>
         </div>
+
+        {/* Navbar for large screen */}
         <div className={style.navItems}>
           {navLinks.map((link, i) => {
             return (
-              // <navLinks to='/' style={{isActive}} => ({
-              //   color: isActive ? 'greenyellow' : 'white'
-              // })></navLinks>
-
               <a key={i} href={"#" + link}>
                 {link}
               </a>
@@ -28,12 +49,7 @@ function Navbar(  ) {
           })}
         </div>
         <div className={style.social}>
-          <Links  />
-        </div>
-
-        {/* for small divces */}
-        <div className={style.menue}>
-          <FcMenu />
+          <Links />
         </div>
       </nav>
     </>
