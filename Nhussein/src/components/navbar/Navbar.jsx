@@ -18,19 +18,24 @@ function Navbar() {
         {/* for small divces */}
         <div className={style.menue}>
           <FcMenu onClick={toggleVisiblity} />
-         <div className={`${style.sideMenue} ${isVisible ? style.visible : ''}`}>
-         {isVisible && (
-            <div>
-              {navLinks.map((link, i) => {
-                return (
-                  <a key={i} href={"#" + link}>
-                    {link}
-                  </a>
-                );
-              })}
+          <div
+            className={`${style.sideMenue} ${isVisible ? style.visible : ""}`}
+          >
+            {isVisible && (
+              <div className={style.popMenue}>
+                {navLinks.map((link, i) => {
+                  return (
+                    <a className={style.navLinks} key={i} href={"#" + link}>
+                      {link}
+                    </a>
+                  );
+                })}
+              </div>
+            )}
+            <div className={style.menueSocial}>
+              <Links />
             </div>
-          )}
-         </div>
+          </div>
         </div>
         <div className={style.logo}>
           <a href="/">
