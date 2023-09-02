@@ -1,17 +1,17 @@
-import './App.css'
-import Navbar from './components/Navbar/Navbar'
+import "./App.css";
+import Navbar from "./components/Navbar/Navbar";
+import Cursor from "./components/cursor/Cursor";
 
-import nasser from './data/Nasser'
+import nasser from "./data/Nasser";
 
 function App() {
- 
-
   return (
     <>
-    <Navbar link={nasser.links}/>
-   
+      <Cursor />
+        <Navbar link={nasser.links} />
+
     </>
-  )
+  );
 }
 
-export default App
+export default App;

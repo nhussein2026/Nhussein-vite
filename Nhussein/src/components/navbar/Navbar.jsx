@@ -2,6 +2,8 @@ import { useState } from "react";
 import Links from "../links/Links";
 import style from "./Navbar.module.css";
 import { FcMenu } from "react-icons/fc";
+import Cursor from "../cursor/Cursor";
+
 
 function Navbar() {
   // console.log("this is the console of navbar ", links.github)
@@ -57,6 +59,7 @@ function Navbar() {
           <Links />
         </div>
       </nav>
+      <Cursor />
     </>
   );
 }
