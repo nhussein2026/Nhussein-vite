@@ -1,13 +1,13 @@
 import { useState } from "react";
 import Links from "../links/Links";
 import style from "./Navbar.module.css";
-import { FcMenu } from "react-icons/fc";
+import { TbMenu } from "react-icons/tb";
 import Cursor from "../cursor/Cursor";
 
 
 function Navbar() {
   // console.log("this is the console of navbar ", links.github)
-  const navLinks = ["Home", "About", "Projects"];
+  const navLinks = ["Home", "About Me", "Projects", "Contact", "Technologies", "Blog"];
   const [isVisible, setIsVisible] = useState(false);
 
   const toggleVisiblity = () => {
@@ -19,7 +19,7 @@ function Navbar() {
       <nav className={style.nav}>
         {/* for small divces */}
         <div className={style.menue}>
-          <FcMenu onClick={toggleVisiblity} />
+          <TbMenu className={style.menueIcon} onClick={toggleVisiblity} />
           <div
             className={`${style.sideMenue} ${isVisible ? style.visible : ""}`}
           >
@@ -41,7 +41,7 @@ function Navbar() {
         </div>
         <div className={style.logo}>
           <a href="/">
-            <code className={style.Logo}>Nasser Hussein</code>
+            <code className={style.Logo}>Nasser <span className={style.Hussein}>Hussein</span></code>
           </a>
         </div>
 

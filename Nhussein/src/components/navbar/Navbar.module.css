@@ -27,6 +27,12 @@ nav a {
     font-size: 25px;
 }
 
+.Hussein {
+    /* background-color: #fff; */
+}
+.menueIcon {
+    color: #67cee2 !important;
+}
 
 .sideMenue {
     position: fixed;
@@ -34,12 +40,9 @@ nav a {
     left: 0;
     width: 290px;
     height: 100vh;
-    background-color: lightgray;
+    background-color: #c4c6c8;
     transform: translateX(-100%);
     transition: transform 0.3s ease-in-out;
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* justify-content: space-between; */
 }
 
 .visible {
@@ -87,6 +90,12 @@ nav a {
         height: 75px;
         align-items: center;
     }
+
+    nav a {
+    font-family: "JetBrains Mono", monospace;
+    color: #1f3e60;  
+    }
+
     .navItems {
         display: none;
     }
@@ -102,7 +111,4 @@ nav a {
         margin: 12px;
     }
 
-    .logo {
-        
-    }
 }
